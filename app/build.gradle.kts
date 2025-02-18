@@ -40,4 +40,19 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+    // Retrofit library for network requests
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+
+    // Retrofit converter for Gson (if you are using JSON responses)
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    // OkHttp for making network requests
+    implementation ("com.squareup.okhttp3:okhttp:4.10.0")
+
+    // OkHttp logging interceptor (optional, for logging network requests)
+    implementation ("com.squareup.okhttp3:logging-interceptor:4.10.0")
+
+    // Gson (required by Retrofit)
+    implementation ("com.google.code.gson:gson:2.8.8")
+
 }

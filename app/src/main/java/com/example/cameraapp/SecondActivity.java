@@ -29,6 +29,8 @@ public class SecondActivity extends AppCompatActivity {
                 if (uri != null) {
                     selectedImageUri = uri;
                     imageView.setImageURI(uri);
+                    FileUploader fileUploader=new FileUploader(SecondActivity.this);
+                    fileUploader.uploadFile(uri);
                     Toast.makeText(SecondActivity.this, "Image Selected", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(SecondActivity.this, "No Image Selected", Toast.LENGTH_SHORT).show();
@@ -90,7 +92,7 @@ public class SecondActivity extends AppCompatActivity {
     }
 
     private void openGallery() {
-        pickImageLauncher2.launch(new PickVisualMediaRequest.Builder()
+        pickImageLauncher.launch(new PickVisualMediaRequest.Builder()
                 .setMediaType(ActivityResultContracts.PickVisualMedia.ImageOnly.INSTANCE)
                 .build());
     }
